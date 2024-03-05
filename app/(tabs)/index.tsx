@@ -1,10 +1,7 @@
-import { StyleSheet, TouchableOpacity } from "react-native";
-
-import { Text, View } from "../../components/Themed";
+import { StyleSheet, TouchableOpacity, View, Text } from "react-native";
 import { FontAwesome } from "@expo/vector-icons";
 import {
   ScrollView,
-  TouchableNativeFeedback,
 } from "react-native-gesture-handler";
 import * as SQLite from "expo-sqlite";
 import { useEffect, useState } from "react";

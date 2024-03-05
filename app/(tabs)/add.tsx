@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { StyleSheet, TextInput, TouchableOpacity, Button } from "react-native";
-import { Text, View } from "../../components/Themed";
+import { StyleSheet, TextInput, TouchableOpacity, Text, View } from "react-native";
 import * as SQLite from "expo-sqlite";
 import { useRouter } from "expo-router";
 import { FontAwesome } from "@expo/vector-icons";

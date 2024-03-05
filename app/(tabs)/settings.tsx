@@ -2,11 +2,9 @@ import React, { useState } from "react";
 import {
   StyleSheet,
   Switch,
-  Pressable,
-  Alert,
-  TouchableOpacity,
+  View,
+  Text,
 } from "react-native";
-import { Text, View } from "../../components/Themed";
 
 export default function SettingsScreen() {
   const [darkMode, setDarkMode] = useState(false);
