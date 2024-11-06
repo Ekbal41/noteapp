@@ -1,12 +1,11 @@
 import FontAwesome from "@expo/vector-icons/FontAwesome";
-import { Link, Tabs } from "expo-router";
-import { Pressable, useColorScheme } from "react-native";
-
+import { Tabs } from "expo-router";
+import { Link } from "expo-router";
 import Colors from "../../constants/Colors";
+import { useColorScheme } from "react-native";
 
 export default function TabLayout() {
   const colorScheme = useColorScheme();
-
   return (
     <Tabs
       screenOptions={{
@@ -17,65 +16,32 @@ export default function TabLayout() {
         name="index"
         options={{
           tabBarIcon: ({ color }) => (
-            <FontAwesome
-              name="home"
-              size={24}
-              color={color}
-              style={{
-                marginTop: 11,
-              }}
-            />
+            <FontAwesome name="home" size={24} color={color} />
           ),
           title: "",
           headerTitle: "All Notes",
           headerTitleAlign: "left",
-          headerRight: () => (
-            <Link href="/info" asChild>
-              <Pressable>
-                {({ pressed }) => (
-                  <FontAwesome
-                    name="info-circle"
-                    size={24}
-                    color={Colors[colorScheme ?? "light"].text}
-                    style={{ marginRight: 15, opacity: pressed ? 0.5 : 1 }}
-                  />
-                )}
-              </Pressable>
-            </Link>
-          ),
         }}
       />
       <Tabs.Screen
         name="add"
         options={{
           title: "",
-          headerTitle: "Add New",
+          headerTitle: "Add/Edit Note",
           tabBarIcon: ({ color }) => (
-            <FontAwesome
-              name="plus-circle"
-              size={24}
-              color={color}
-              style={{
-                marginTop: 11,
-              }}
-            />
+            <Link href="/add">
+              <FontAwesome name="plus-circle" size={24} color={color} />
+            </Link>
           ),
         }}
       />
       <Tabs.Screen
-        name="settings"
+        name="note"
         options={{
           title: "",
-          headerTitle: "Settings",
+          headerTitle: "Showing Note",
           tabBarIcon: ({ color }) => (
-            <FontAwesome
-              name="gear"
-              size={24}
-              color={color}
-              style={{
-                marginTop: 11,
-              }}
-            />
+            <FontAwesome name="eye" size={24} color={color} />
           ),
         }}
       />
